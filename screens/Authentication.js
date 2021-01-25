@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
-export default function Authentication() {
+export default function Authentication(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -24,8 +24,8 @@ export default function Authentication() {
         secureTextEntry={true}
       />
       <View style={styles.buttons}>
-        <Button title="Signup" />
-        <Button title="Create" />
+        <Button title="Signup" onPress={() => props.login(email, password)} />
+        <Button title="Create" onPress={() => props.createUser(email, password)} />
       </View>
     </View>
   );
