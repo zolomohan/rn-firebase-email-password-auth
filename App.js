@@ -14,15 +14,15 @@ export default function App() {
     }
   });
 
-  const createUser = async (email, password) => {
+  const createUser = (email, password) => {
     try {
-      await auth().createUserWithEmailAndPassword(email, password);
+      auth().createUserWithEmailAndPassword(email, password);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
-  const login = async (email, password) => {
+  const signin = (email, password) => {
     try {
       auth().signInWithEmailAndPassword(email, password);
     } catch (error) {
@@ -34,5 +34,5 @@ export default function App() {
     return <Authenticated />;
   }
 
-  return <Authentication login={login} createUser={createUser} />;
+  return <Authentication signin={signin} createUser={createUser} />;
 }

@@ -24,7 +24,7 @@ export default function Authentication(props) {
         secureTextEntry={true}
       />
       <View style={styles.buttons}>
-        <Button title="Signup" onPress={() => props.login(email, password)} />
+        <Button title="signin" onPress={() => props.signin(email, password)} />
         <Button title="Create" onPress={() => props.createUser(email, password)} />
       </View>
     </View>
